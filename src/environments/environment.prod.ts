@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  databaseuser:'root',
+  databasepassword:'ioqwueiouqwe',
+  databasehost:'www.bootcamp.cl',
 };
