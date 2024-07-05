@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,11 +16,11 @@ export class AppComponent {
 
   crearFormulario(){
     this.forma = this.fb.group({
-      nombre:[""],
-      apellido:[""],
-      correo:[""],
-      password1:[""],
-      password2:[""]
+      nombre:["", Validators.required],
+      apellido:["", Validators.required],
+      correo:["", Validators.required],
+      password1:["", Validators.required],
+      password2:["", Validators.required]
     })
   }
 
