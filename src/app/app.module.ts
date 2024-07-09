@@ -13,13 +13,12 @@ import { ForminscripcionComponent } from './pages/forminscripcion/forminscripcio
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SavePersonaInterceptor } from './interceptors/save-persona.interceptor';
 import { PersonaService } from './services/persona.service';
-import { PersonaComponent } from './pages/persona/persona.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PersonaComponent,
    // HeaderComponent,
    // FooterComponent,
    // MenuComponent,
