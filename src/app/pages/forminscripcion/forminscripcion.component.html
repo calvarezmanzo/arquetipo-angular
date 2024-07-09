@@ -1,0 +1,64 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <app-header></app-header>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="form-container"> 
+        <div class="text-center fs-1 fw-bold">Formulario Inscripción</div>
+        <br/>
+            <form [formGroup]="formInscripcion" (ngSubmit)="onSubmit()">
+
+                <div class="mb-3">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" formControlName="Nombre" placeholder="Ej. Marian">
+                </div>
+                <div class="mb-3">
+                    <label for="Apellido">Apellido</label>
+                    <input type="text" class="form-control" id="Apellido" formControlName="Apellido" placeholder="Ej. Mora">
+                </div>
+                <div class="mb-12">
+                    <label for="URLinkedln">URL Linkedln</label>
+                    <input type="text" class="form-control" id="URLinkedln" formControlName="Linkedin" placeholder="Ej. https://www.linkedin.com/maria-mora">
+                </div>
+                 <br/>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+    </div>
+</div>
+<div class="container">
+    <div class="form-container"> 
+            <div class="text-center fs-3 fw-bold">Lista de Personas</div>
+            <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>URL LinkedIn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas">
+                <td>{{ persona.Nombre }}</td>
+                <td>{{ persona.Apellido }}</td>
+                <td>{{ persona.Linkedin }}</td>
+                </tr>
+            </tbody>
+            </table>                                                                                                                                                            
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<app-footer></app-footer>
+

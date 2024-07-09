@@ -8,21 +8,33 @@ import { HeaderComponent } from './pages/common/header/header.component';
 import { FooterComponent } from './pages/common/footer/footer.component';
 import { MenuComponent } from './pages/common/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Login2Component } from './pages/login2/login2.component';
+import { ForminscripcionComponent } from './pages/forminscripcion/forminscripcion.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SavePersonaInterceptor } from './interceptors/save-persona.interceptor';
+import { PersonaService } from './services/persona.service';
+import { PersonaComponent } from './pages/persona/persona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    MenuComponent
+    PersonaComponent,
+   // HeaderComponent,
+   // FooterComponent,
+   // MenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: SavePersonaInterceptor, multi: true},
+    PersonaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
