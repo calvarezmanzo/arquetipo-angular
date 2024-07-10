@@ -18,7 +18,7 @@ formulario!:FormGroup;
         '',
         [
           Validators.required,
-          Validators.minLength(4),
+          Validators.minLength(3),
           Validators.maxLength(20),
         ],
       ],
@@ -26,7 +26,7 @@ formulario!:FormGroup;
         '',
         [
           Validators.required,
-          Validators.minLength(4),
+          Validators.minLength(3),
           Validators.maxLength(20),
         ],
       ],
