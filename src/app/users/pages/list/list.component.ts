@@ -8,7 +8,7 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class ListComponent implements OnInit {
 
-  data: any = {}
+  data: any[] = []
 
 constructor(private apiRest: UsuariosService ){}
 
