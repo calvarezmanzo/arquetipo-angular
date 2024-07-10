@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
   
   private url : string ="https://www.codigo-alfa.cl/aglo/Angular/listPersona"
+
   constructor(private http: HttpClient) {}
 
-  obtenerUsuarios(){
-    return this.http.get(`${this.url}`);
+  public obtenerUsuarios(): Observable<any>{
+    return this.http.get<any>(this.url)
   }
 }

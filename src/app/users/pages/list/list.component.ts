@@ -8,12 +8,22 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private usuariosService: UsuariosService) {
-    this.usuariosService.obtenerUsuarios().subscribe((resp) => {
-      console.log(resp);
-    });
-  }
+  data: any = {}
 
-  ngOnInit(): void {}
+constructor(private apiRest: UsuariosService ){}
+
+
+  ngOnInit(): void {
+
+    this.llenarData()
+
+  }
+  
+  llenarData(){
+    this.apiRest.obtenerUsuarios().subscribe (data => {
+      this.data = data.personas;
+
+      console.log(this.data)
+    })  }
   
 }
