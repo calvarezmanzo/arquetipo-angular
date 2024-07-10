@@ -8,6 +8,7 @@ import { HeaderComponent } from './pages/common/header/header.component';
 import { FooterComponent } from './pages/common/footer/footer.component';
 import { MenuComponent } from './pages/common/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormularioComponent } from './pages/common/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    FormularioComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

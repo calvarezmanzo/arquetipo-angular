@@ -1,0 +1,37 @@
+i {
+  font-size: 40px;
+  color: #fff;
+}
+
+i:hover {
+  color: deeppink;
+}
+
+.formu {
+  margin-top: 50px;
+  padding-top: 20px;
+  height: 320px;
+  width: 500px;
+  background-color: cornflowerblue;
+  border-radius: 8px;
+}
+
+.lbl {
+  border-radius: 8px;
+  border: 1px solid cornflowerblue;
+  height: 40px;
+  padding: 0 8px;
+  width: 300px;
+}
+
+.btn-validar {
+  width: 120px;
+  height: 40px;
+  background-color: deeppink;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-validar:hover {
+  background-color: chartreuse;
+}
