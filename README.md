@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Login
+
+Para iniciar sesion se debe ir a la ruta `login`, el usuario y contrasenia son los siguientes
+
+```
+usuario: rodrigo
+constrasenia: 123456
+```
+
+Una vez logueado se redirigira a la ruta `welcome`, la cual tiene un guard que valida si se logueo con exito, en caso de no estar logueado correctamente devuelve al login
