@@ -8,6 +8,7 @@ import { HeaderComponent } from './pages/common/header/header.component';
 import { FooterComponent } from './pages/common/footer/footer.component';
 import { MenuComponent } from './pages/common/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
