@@ -1,0 +1,54 @@
+<div class="container-sm">
+    <h1>Formulario</h1>
+    <hr />
+    <form [formGroup]="formulario"(ngSubmit)="guardar()">
+      <div>
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Nombre</label>
+          <div class="col-8">
+            <input
+              class="form-control"
+              type="text"
+              formControlName="nombre"
+              placeholder="Nombre"
+            />
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Apellido</label>
+          <div class="col-8">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Apellido"
+              formControlName="apellido"
+            />
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-2 col-form-label">LinkedIn</label>
+        <div class="col-md-8">
+       <a href="https://www.linkedin.com/in/dmmtapia/" target="_blank" rel="noopener noreferrer">David Martínez Tapia</a>
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+          <button type="submit" class="btn btn-outline-primary mr-2">
+            Guardar
+          </button>
+          <button type="button" class="btn btn-outline-danger" (click)="limpiar()">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  
+    <hr>
+    <h3 class="mt-5">Formulario</h3>
+    <pre>Estado de formulario:{{formulario.valid}} <br>Status:{{formulario.status}}</pre>
+    <pre>{{formulario.value | json}}</pre>
+  </div>
+  

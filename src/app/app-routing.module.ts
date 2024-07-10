@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component:HomeComponent
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path:'login',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
-  }
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then((m) => m.UsersModule),
+  },
+  // {
+  //     path:"**",
+  //     redirectTo:"auth"
+  // }
 ];
 
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
