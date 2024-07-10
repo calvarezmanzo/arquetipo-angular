@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Login</h3>
+                    <div *ngIf="showAlert" class="alert alert-{{alertType}} alert-dismissible fade show" role="alert">
+                        {{ alertMessage }}
+                        <button type="button" class="btn-close" (click)="closeAlert()" aria-label="Close"></button>
+                    </div>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="form-group mb-3">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" formControlName="Name">
+                            <div *ngIf="form.get('Name')?.invalid && form.get('Name')?.touched" class="text-danger mt-2">
+                                Name is required
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" formControlName="LastName">
+                            <div *ngIf="form.get('LastName')?.invalid && form.get('LastName')?.touched" class="text-danger mt-2">
+                                Last Name is required
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="linkedin">Linkedin</label>
+                            <input type="text" class="form-control" id="linkedin" formControlName="Linkedin">
+                            <div *ngIf="form.get('Linkedin')?.invalid && form.get('Linkedin')?.touched" class="text-danger mt-2">
+                                Linkedin is required
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" [disabled]="form.invalid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
