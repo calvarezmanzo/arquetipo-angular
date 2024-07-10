@@ -1,0 +1,18 @@
+<div class="container form-container">
+  <form [formGroup]="formPerson" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre:</label>
+      <input type="text" class="form-control" id="name" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Apellidos:</label>
+      <input type="text" class="form-control" id="lastname" formControlName="lastname">
+    </div>
+    <div class="mb-3">
+      <label for="linkedin" class="form-label">Linkedin:</label>
+      <input type="url" class="form-control" id="linkedin" formControlName="linkedin">
+    </div>
+    <button type="submit" class="btn btn-primary button-space">Guardar</button>
+    <button type="button" class="btn btn-danger button-space" (click)="cancel()">Cancelar</button>
+  </form>
+</div>

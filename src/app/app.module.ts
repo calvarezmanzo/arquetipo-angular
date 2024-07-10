@@ -8,6 +8,11 @@ import { HeaderComponent } from './pages/common/header/header.component';
 import { FooterComponent } from './pages/common/footer/footer.component';
 import { MenuComponent } from './pages/common/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { CodigoAlfaServiceService } from './services/codigo-alfa-service.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { CodigoAlfaInterceptorInterceptor } from './intercetors/codigo-alfa-interceptor.interceptor';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,14 +20,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [
+    CodigoAlfaServiceService,
+    {provide: HTTP_INTERCEPTORS, useClass: CodigoAlfaInterceptorInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

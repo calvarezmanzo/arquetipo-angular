@@ -1,0 +1,20 @@
+.title{
+    font-size: 30px;
+    margin: 10px;
+}
+.linkedin{
+    height: 50px;
+    background-color: blueviolet;
+}
+.information-container{
+    background-color: blueviolet;
+    color: azure;
+    margin: 5px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.information-container:hover{
+    background-color: black;
+    margin: 2px;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row title">
+        <div class="col-8">
+            Bienvenido!!
+        </div>
+        <div class="col-4">
+            <button type="button" class="btn btn-primary" (click)="newPerson()" >Agregar</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 information-container" *ngFor="let person of persons">
+                <h2>{{person.Nombre}}</h2>
+                <h3>{{person.Apellido}}</h3>
+                <a href="{{person.Linkedin}}" target="_blank">
+                    <img class="linkedin"  src="https://e7.pngegg.com/pngimages/796/374/png-clipart-linkedin-linkedin-thumbnail.png" alt="LINKEDIN">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
