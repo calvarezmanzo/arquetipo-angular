@@ -30,6 +30,12 @@ formulario!:FormGroup;
           Validators.maxLength(20),
         ],
       ],
+      linkedin: [
+        '',
+        [
+          Validators.required,
+        ],
+      ],
     })
   }
 
