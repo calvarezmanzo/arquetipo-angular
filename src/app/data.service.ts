@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,8 +16,10 @@ export class DataService {
     return this.http.get<any>(`${this.apiUrl}/listPersona`);
   }
 
-  savePerson(nombre: string, apellidos: string, urlLinkedin: string): Observable<any> {
-    const body = { Nombre: nombre, Apellidos: apellidos, URLLinkedin: urlLinkedin };
-    return this.http.post<any>(`${this.apiUrl}/savePerson`, body);
+  savePerson(usuario: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<any>(`${this.apiUrl}/savePersona`, usuario, { headers });
   }
 }

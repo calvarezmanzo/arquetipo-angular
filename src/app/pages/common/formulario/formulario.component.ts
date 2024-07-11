@@ -32,8 +32,14 @@ export class FormularioComponent implements OnInit {
       const apellidos = this.formularioLogin.get('Apellidos')!.value;
       const urlLinkedin = this.formularioLogin.get('URLLinkedin')!.value;
 
+      const usuario = {
+        Nombre: nombre,
+        Apellido: apellidos,
+        Linkedin: urlLinkedin
+      };
+
       // Llamar al servicio para insertar los datos
-      this.dataService.savePerson(nombre, apellidos, urlLinkedin).subscribe(
+      this.dataService.savePerson(usuario).subscribe(
           response => {
               console.log('Datos insertados correctamente:', response);
               // Aquí podrías agregar lógica adicional como mostrar un mensaje de éxito, redirigir, etc.
