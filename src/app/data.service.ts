@@ -16,7 +16,8 @@ export class DataService {
     return this.http.get<any>(`${this.apiUrl}/listPersona`);
   }
 
-  savePerson(personData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/savePerson`, personData);
+  savePerson(nombre: string, apellidos: string, urlLinkedin: string): Observable<any> {
+    const body = { Nombre: nombre, Apellidos: apellidos, URLLinkedin: urlLinkedin };
+    return this.http.post<any>(`${this.apiUrl}/savePerson`, body);
   }
 }

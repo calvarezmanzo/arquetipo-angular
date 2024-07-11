@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { DataService } from 'src/app/data.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.css']
 })
+
 export class FormularioComponent implements OnInit {
   formularioLogin!:FormGroup;
-  listPersona$!: Observable<any>;
-  
-
 
   constructor(
-    private formBuilder: FormBuilder,  public dataService: DataService
+    private formBuilder: FormBuilder,  public dataService: DataService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,16 +27,29 @@ export class FormularioComponent implements OnInit {
 
   onSubmit(): void {
  
-    this.dataService.getListPersona().subscribe(
-      (data) => {
-        console.log('Respuesta del servicio:', data);
-        // Aquí puedes manejar la respuesta del servicio según sea necesario
-      },
-      (error) => {
-        console.error('Error al llamar al servicio:', error);
-        // Manejo de errores aquí
-      }
-    );
+    if (this.formularioLogin.valid) {
+      const nombre = this.formularioLogin.get('Nombre')!.value;
+      const apellidos = this.formularioLogin.get('Apellidos')!.value;
+      const urlLinkedin = this.formularioLogin.get('URLLinkedin')!.value;
+
+      // Llamar al servicio para insertar los datos
+      this.dataService.savePerson(nombre, apellidos, urlLinkedin).subscribe(
+          response => {
+              console.log('Datos insertados correctamente:', response);
+              // Aquí podrías agregar lógica adicional como mostrar un mensaje de éxito, redirigir, etc.
+          },
+          error => {
+              console.error('Error al insertar datos:', error);
+              // Manejo de errores: mostrar mensaje al usuario, registrar en un log, etc.
+          }
+      );
+  } else {
+    alert('¡Alerta! No haz completado los datos de forma correcta.');// Formulario inválido, manejar según tus requerimientos (mostrar mensajes, etc.)
+  }
+  }
+
+  redirectToHome(): void {
+    this.router.navigate(['/home']);
   }
 
 }
