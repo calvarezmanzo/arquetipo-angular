@@ -1,0 +1,26 @@
+<div class="container list-container">
+    <div class="row">
+        <div class="col-md-9 mx-auto">
+            <h2 class="text-center mb-4">Listado de Personas</h2>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>LinkedIn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let persona of personas">
+                        <td>{{ persona.IdPersona }}</td>
+                        <td>{{ persona.Nombre }}</td>
+                        <td>{{ persona.Apellido }}</td>
+                        <td>{{ persona.Linkedin }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

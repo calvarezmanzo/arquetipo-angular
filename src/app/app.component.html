@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <app-header></app-header>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="background-color: lightgrey;">
+            <app-menu></app-menu>
+        </div>
+
+        <div class="col-12">
+            <br>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+

@@ -8,9 +8,14 @@ const routes: Routes = [
     component:HomeComponent
   },
   {
+    path: '',
+    component:HomeComponent
+  },
+  {
     path:'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
-  }
+  },
+  { path: 'listar', loadChildren: () => import('./listar/listar.module').then(m => m.ListarModule) }
 ];
 
 @NgModule({

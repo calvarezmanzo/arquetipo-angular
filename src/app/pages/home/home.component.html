@@ -1,37 +1,12 @@
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <app-header></app-header>
+<div class="welcome-container">
+    <h1>Bienvenido</h1>
+    <p class="welcome-message">¡Nos alegra verte! Por favor, selecciona una opción para continuar:</p>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary-custom" (click)="redirectToLogin()">Formulario de Registro</button>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-secondary-custom" (click)="redirectToListar()">Listar Personas</button>
         </div>
     </div>
 </div>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-            <app-menu></app-menu>
-        </div>
-
-        <div class="col-9">
-           
-            <form [formGroup]="formularioEjemplo" (ngSubmit)="onSubmit()">
-
-                <div class="form-group">
-                    <label for="Nombre">Nombre</label>
-                    <input type="text" class="form-control" id="Nombre" formControlName="Nombre">
-                </div>
-                {{formularioEjemplo.value|json}}
-
-
-
-                <button type="submit" class="btn btn-primary btn-block">Saludar</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-
-<app-footer></app-footer>

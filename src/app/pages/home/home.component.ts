@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,23 +9,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class HomeComponent implements OnInit {
-  formularioEjemplo!:FormGroup;
+
 
   // Nombre,Apellido,RUT
   constructor(
-    private formBuilder: FormBuilder
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.formularioEjemplo = this.formBuilder.group({
-      Nombre:['CARLOS',[Validators.required,Validators.minLength(20)]],  
-      Apellido:['',[Validators.required,Validators.minLength(20)]], 
-      Rut:['',[Validators.required]], 
-    })
+
+  }
+  
+  redirectToLogin(): void {
+    this.router.navigate(['/login']);
   }
 
-  onSubmit(){
-    console.log(this.formularioEjemplo.value);
+  redirectToListar(): void {
+    this.router.navigate(['/listar']);
   }
+
 
 }

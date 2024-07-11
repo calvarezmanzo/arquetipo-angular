@@ -1,0 +1,38 @@
+<div class="container form-container">
+    <div class="row">
+        <div class="col-md-9 mx-auto">
+            <h2 class="text-center mb-4">Formulario de Registro</h2>
+            <form [formGroup]="formularioLogin" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" formControlName="Nombre" required>
+                    <div class="invalid-feedback">
+                        Nombre es requerido.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="Apellidos" formControlName="Apellidos" required>
+                    <div class="invalid-feedback">
+                        Apellidos son requeridos.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="URLLinkedin">Linkedin</label>
+                    <input type="text" class="form-control" id="URLLinkedin" formControlName="URLLinkedin">
+                </div>
+                <div class="col-12">
+                    <hr>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary-custom btn-block">Registrar</button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-secondary-custom btn-block">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

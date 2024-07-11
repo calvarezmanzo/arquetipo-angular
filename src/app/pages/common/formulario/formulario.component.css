@@ -1,17 +1,29 @@
-.welcome-container {
-    text-align: center;
-    margin-top: 50px;
+.form-container {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
-.welcome-container h1 {
-    font-size: 3rem;
+h2 {
     color: #333;
 }
 
-.welcome-message {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.form-group .invalid-feedback {
+    color: #ff6f6f;
 }
 
 .btn-primary-custom {
@@ -44,10 +56,10 @@
     border-color: #999;
 }
 
-.row.justify-content-center {
-    justify-content: center;
+.row.justify-content-end {
+    justify-content: flex-end;
 }
 
 .col-auto {
-    margin: 10px;
+    margin: 5px;
 }

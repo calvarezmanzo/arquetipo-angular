@@ -4,25 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './pages/common/header/header.component';
-import { FooterComponent } from './pages/common/footer/footer.component';
-import { MenuComponent } from './pages/common/menu/menu.component';
+import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    MenuComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
