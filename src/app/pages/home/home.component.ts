@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
 
   }
 
-  redirectToLogin(): void {
-    this.router.navigate(['/login']);
+  redirectToRegistro(): void {
+    this.router.navigate(['/registro']);
   }
 
   redirectToListar(): void {

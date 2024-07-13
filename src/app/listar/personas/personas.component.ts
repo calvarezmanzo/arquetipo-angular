@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service'; // Ajusta la ruta según la ubicación real de tu servicio
-import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personas',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class PersonasComponent implements OnInit {
   personas!: any[]; // Define el arreglo para almacenar las personas
 
-  constructor(private dataService: DataService) { }
+  constructor(private authService: AuthService, private router: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getListPersona().subscribe(
@@ -23,4 +24,10 @@ export class PersonasComponent implements OnInit {
       }
     );
   }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
 }

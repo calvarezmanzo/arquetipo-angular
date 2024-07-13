@@ -1,7 +1,10 @@
 <div class="container-menu">
     <ul>
-        <li><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
-        <li><a routerLink="/login" routerLinkActive="active">Registro</a></li>
-        <li><a routerLink="/listar" routerLinkActive="active">Listar</a></li>
+        <li *ngIf="isAuthenticated()"><a routerLink="/home" routerLinkActive="active">Inicio</a></li>
+        <li *ngIf="isAuthenticated()"><a routerLink="/registro" routerLinkActive="active">Registro</a></li>
+        <li *ngIf="isAuthenticated()"><a routerLink="/listar" routerLinkActive="active">Listar</a></li>
+        <li *ngIf="isAuthenticated()">
+            <a href="#" class="logout-link" (click)="logout()">Salir</a>
+        </li>
     </ul>
 </div>

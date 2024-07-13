@@ -39,3 +39,52 @@
     max-height: 100px;
     
 }
+
+.container-menu {
+    background-color: #333; /* Dark gray */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 100px;
+}
+
+.container-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-menu li {
+    display: inline;
+}
+
+.container-menu a {
+    color: #ddd; /* Light gray */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container-menu a:hover {
+    background-color: #555; /* Medium gray */
+    color: #fff; /* White */
+}
+
+.container-menu a.active {
+    background-color: #555; /* Medium gray */
+    color: #fff; /* White */
+}
+
+/* Specific styles for the logout link */
+.container-menu a.logout-link {
+    background-color: #ff4d4d; /* Red */
+    color: white;
+}
+
+.container-menu a.logout-link:hover {
+    background-color: #ff1a1a; /* Darker red */
+}
