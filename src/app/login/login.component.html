@@ -11,10 +11,19 @@
         <div class="form-group">
             <label for="email">Email</label>
             <input id="email" formControlName="email" type="email" />
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                <small *ngIf="loginForm.get('email')?.errors?.['required']">Email es requerido.</small>
+                <small *ngIf="loginForm.get('email')?.errors?.['email']">Email no es válido.</small>
+            </div>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
             <input id="password" formControlName="password" type="password" />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                <small *ngIf="loginForm.get('password')?.errors?.['required']">Contraseña es requerida.</small>
+                <small *ngIf="loginForm.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 6
+                    caracteres.</small>
+            </div>
         </div>
         <button type="submit" [disabled]="!loginForm.valid">Login</button>
     </form>
