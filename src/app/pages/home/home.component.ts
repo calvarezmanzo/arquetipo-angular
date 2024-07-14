@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.formularioEjemplo = this.formBuilder.group({
-      Nombre:['CARLOS',[Validators.required,Validators.minLength(20)]],  
+      Nombre:['Tony',[Validators.required,Validators.minLength(20)]],  
       Apellido:['',[Validators.required,Validators.minLength(20)]], 
       Rut:['',[Validators.required]], 
     })
