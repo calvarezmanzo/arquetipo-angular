@@ -1,1 +1,20 @@
-<p>register works!</p>
+<div class="container form-container">
+    <div class="row">
+        <form [formGroup]="formPersona" (ngSubmit)="onSubmit()">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Username: <input type="text" class="form-control" id="name" formControlName="username"></label>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email: <input type="email" class="form-control" id="email" formControlName="email"></label>
+            </div>
+            <div class="mb-3">
+                <label for="linkedin" class="form-label">Linkedin: <input type="text" class="form-control" id="linkedin" formControlName="linkedin"></label>
+            </div>
+
+            <button type="button" class="btn btn-primary button-space">Save</button>
+
+            <button type="button" class="btn btn-primary button-space" (click)="cancel()">Cancel</button>
+
+        </form>
+</div>
