@@ -12,11 +12,18 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
+    "esModuleInterop": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2020",
+    "paths": {
+      "cheerio": [
+          "./node_modules/cheerio/lib/index.d.ts"
+        ]
+    },  
     "module": "es2020",
     "lib": [
       "es2020",

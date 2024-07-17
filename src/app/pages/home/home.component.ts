@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class HomeComponent implements OnInit {
   formularioEjemplo!:FormGroup;
+  /* JSON = JSON */
 
   // Nombre,Apellido,RUT
   constructor(

@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <app-header></app-header>
+            <!-- <app-header></app-header> -->
         </div>
     </div>
 </div>
@@ -10,22 +10,20 @@
 
 <div class="container">
     <div class="row">
+        
+      
+
         <div class="col-3">
             <app-menu></app-menu>
         </div>
 
         <div class="col-9">
-           
             <form [formGroup]="formularioEjemplo" (ngSubmit)="onSubmit()">
-
                 <div class="form-group">
                     <label for="Nombre">Nombre</label>
                     <input type="text" class="form-control" id="Nombre" formControlName="Nombre">
                 </div>
-                {{formularioEjemplo.value|json}}
-
-
-
+                <pre>{{ formularioEjemplo.value | json }}</pre>
                 <button type="submit" class="btn btn-primary btn-block">Saludar</button>
             </form>
         </div>
@@ -34,4 +32,4 @@
 
 
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
