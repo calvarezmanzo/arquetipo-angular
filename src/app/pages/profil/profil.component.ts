@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IngresarServiceService } from 'src/app/services/ingresar-service.service';
+import { TokenServiceService } from 'src/app/services/token-service.service';
 
 @Component({
   selector: 'app-profil',
@@ -12,17 +12,16 @@ export class ProfilComponent implements OnInit {
   usuarios: any[] =[];
 
   constructor(
-    private service: IngresarServiceService,
+    private service: TokenServiceService,
     private router: Router
   ) { }
 
+  nombre_usruario = localStorage.getItem('user');
+  token = localStorage.getItem('token');
+
   ngOnInit(): void {
-    this.service.saveIngreso(localStorage.getItem('user')).subscribe(data => {
-      this.usuarios = data;
-    },
-    error => {
-      console.log(error);
-    });
+    this.nombre_usruario = this.service.getUsers().username;
+    this.token = this.service.getToken() || '';
   }
 
   newUsuario(){

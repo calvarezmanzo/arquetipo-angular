@@ -7,7 +7,6 @@ import { QuienesSomosComponent } from "./common/quienes-somos/quienes-somos.comp
 import { ContactoComponent } from "./common/contacto/contacto.component";
 import { FooterComponent } from "./common/footer/footer.component";
 import { MenuComponent } from "./common/menu/menu.component";
-import { CuentasComponent } from "./common/cuentas/cuentas.component";
 import { ProfilComponent } from "./profil/profil.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ErrorComponent } from "./common/error/error.component";

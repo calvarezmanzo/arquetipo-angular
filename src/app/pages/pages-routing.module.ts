@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactoComponent } from './common/contacto/contacto.component';
-import { CuentasComponent } from './common/cuentas/cuentas.component';
 import { HomeComponent } from './home/home.component';
 import { QuienesSomosComponent } from './common/quienes-somos/quienes-somos.component';
 import { ProfilComponent } from './profil/profil.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./profil/profil.module').then(m => m.ProfilModule)  
   },
   {path: 'contacto', component: ContactoComponent},
-  {path: 'cuentas', component: CuentasComponent},
   {path: '', redirectTo:'home', pathMatch:'full'},
 ];
 

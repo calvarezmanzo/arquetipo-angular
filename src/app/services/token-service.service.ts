@@ -42,15 +42,16 @@ export class TokenServiceService {
   public getToken = (): string | null => window.sessionStorage.getItem(TOKEN_KEY);
 
   /* Obtiene los datos del usuario */
-  public getUsers = (): Usuarios | null => {
+  public getUsers(): Usuarios {
     const token = window.sessionStorage.getItem(TOKEN_KEY) || '';
     return this.decode(token).data
   }
 
   /* Guarda el token y el usuario en el sessionStorage */
-  public saveTokens = (token: string, user: Usuarios): void => {
+  public saveTokens = (token: string): void => {
+    const usuario: Usuarios = this.decode(token).data;
     this.generate_token(token);
-    this.generate_user(user);
+    this.generate_user(usuario);
   }
 
   /* Elimina el token y el usuario del sessionStorage */

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this._loginService.submitIngreso(this.Usuario_data).subscribe(
       data => {
-        this.service.saveTokens(data.token,data.user);
+        this.service.saveTokens(data.token);
         this.router.navigate(['home']);
       },
       error => {

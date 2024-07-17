@@ -11,12 +11,12 @@ export class IngresarServiceService {
 
   constructor( private _http: HttpClient ) { }
 
-  private url = 'https://www.codigo-alfa.ccl/aglo/Angular/listPersona';
-  private urlSave = 'https://www.codigo-alfa.ccl/aglo/Angular/savePersona';
+  private personas = 'https://www.codigo-alfa.ccl/aglo/Angular/listPersona';
+  private savePersona = 'https://www.codigo-alfa.ccl/aglo/Angular/savePersona';
 
   /* Ingresar al sistema */
-  public submitIngreso = ({ email, password }: UsuariosLogin): Observable<any> => this._http.post(this.url, { email, password });
+  public submitIngreso = ({ email, password }: UsuariosLogin): Observable<any> => this._http.post(this.personas, { email, password });
 
   /* Guardar usuario */
-  public saveIngreso = (user: any): Observable<any> => this._http.post(this.urlSave, user);
+  public saveIngreso = (body: any): Observable<any> => this._http.post(this.savePersona, body);
 }
