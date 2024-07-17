@@ -4,19 +4,30 @@ import { ContactoComponent } from './common/contacto/contacto.component';
 import { CuentasComponent } from './common/cuentas/cuentas.component';
 import { HomeComponent } from './home/home.component';
 import { QuienesSomosComponent } from './common/quienes-somos/quienes-somos.component';
-import { ProfilComponent } from './common/profil/profil.component';
+import { ProfilComponent } from './profil/profil.component';
 import { ErrorComponent } from './common/error/error.component';
+import { LayoutComponent } from './layout/layout.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'profil', component: ProfilComponent},
-  {path: 'quienesSomos', component: QuienesSomosComponent},
+  {path: '', component: LayoutComponent, children:[
+      {
+        path: 'home', component: HomeComponent,
+      }
+  ]},
+  {path: 'login', component: LoginComponent, 
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
+  {path: 'perfil', component: ProfilComponent,
+    loadChildren: () => import('./profil/profil.module').then(m => m.ProfilModule)  
+  },
   {path: 'contacto', component: ContactoComponent},
   {path: 'cuentas', component: CuentasComponent},
+  {path: '', redirectTo:'home', pathMatch:'full'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class PagesRoutingModule { }
